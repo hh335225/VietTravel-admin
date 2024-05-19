@@ -42,8 +42,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             return `${diffMinutes} phút trước`;
         } else if (diffDays < 1) {
             return `${diffHours} giờ trước`;
-        } else {
+        } else if (diffDays <= 2) {
             return `${diffDays} ngày trước`;
+        } else {
+            const options = { day: 'numeric', month: 'short' };
+            return new Date(date).toLocaleDateString('vi-VN', options);
         }
     }
 
