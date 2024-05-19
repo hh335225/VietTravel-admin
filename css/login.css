@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
@@ -41,7 +43,7 @@ body {
 }
 
 button {
-    width: 100%;
+    width: 120px;
     padding: 10px;
     border: none;
     border-radius: 4px;
@@ -50,6 +52,8 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
 }
 
 button:hover {
