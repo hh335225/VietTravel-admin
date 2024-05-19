@@ -10,6 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch('http://localhost:3000/api/users/all-users');
             users = await response.json();
+            users.sort((a, b) => {
+                const usernameA = a.username.toLowerCase();
+                const usernameB = b.username.toLowerCase();
+                if (usernameA < usernameB) {
+                    return -1;
+                }
+                if (usernameA > usernameB) {
+                    return 1;
+                }
+                return 0;
+            });
             displayUsers(users);
         } catch (error) {
             console.error('Error fetching users:', error);
@@ -48,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const filteredUsers = users.filter(user => {
             return (
                 user.username.toLowerCase().includes(lowerCaseQuery) ||
-                user.numberPhone.toString().includes(lowerCaseQuery) ||
+                ('0' + user.numberPhone.toString() == lowerCaseQuery) ||
                 user.email.toLowerCase().includes(lowerCaseQuery)
             );
         });
