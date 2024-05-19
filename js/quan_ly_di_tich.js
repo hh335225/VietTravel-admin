@@ -12,6 +12,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
             const response = await fetch('http://localhost:3000/api/historicalSites/all-historical-sites');
             historicalSites = await response.json();
+            historicalSites.sort((a, b) => {
+                const nameA = a.name.toLowerCase();
+                const nameB = b.name.toLowerCase();
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                return 0;
+            });
             displayHistoricalSites(historicalSites);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -30,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <span style="font-size: 1.1em">${site.name}</span>
                 </td>
                 <td style="max-width:175px">${site.historySiteId}</td>
-                <td style="max-width: 150px;">${site.summary}</td>
+                <td style="max-width: 200px;">${site.summary}</td>
                 <td style="max-width: 400px;">${site.description}</td>
                 <td style="max-width: 120px;">
                     <span>X = ${site.location.x}<br>Y = ${site.location.y}</span>

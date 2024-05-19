@@ -3,12 +3,12 @@
 }
 #editForm, #addForm {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10px;
-    background-color: #fff;
-    padding: 20px;
+    grid-template-columns: 1fr 3fr;
+    gap: 5px;
+    background-color: #e9f2f6;
+    padding: 20px 20px 30px 20px;
     border: 1px solid #848282;
-    border-radius: 5px;
+    border-radius: 20px;
     width: 400px;
     position: absolute;
     top: 50%;
@@ -30,15 +30,23 @@
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+#editForm #editSummary, #addForm #summary {
+    min-height: 100px;
+}
 
-#editForm textarea, #addForm textarea {
-    min-height: 90px;
+#editForm #editDescription, #addForm #description {
+    min-height: 150px;
 }
 
 .form-buttons {
     grid-column: span 2;
     display: flex;
-    align-items: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.form-buttons button {
+    margin: auto 20px;
+    width: 70px;
 }
 
 #editModal, #addModal {
@@ -53,6 +61,7 @@
     justify-content: center;
     align-items: center;
     font-family: var(--poppins);
+    z-index: 2001;
 }
 
 #add-historical-site {
@@ -72,4 +81,10 @@
 #add-historical-site:hover {
     background-color: #2681dd;
 
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 5px 0 8px 0;
 }

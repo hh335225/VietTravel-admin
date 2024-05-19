@@ -364,7 +364,7 @@ form .form-input button {
 .modal {
 	display: none;
 	position: fixed;
-	z-index: 1;
+	z-index: 2001;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -400,14 +400,19 @@ form .form-input button {
 
 .modal-buttons .btn-confirm {
 	background-color: #28a745;
-	/* Màu xanh lá cây */
 	color: white;
 }
 
 .modal-buttons .btn-cancel {
 	background-color: #dc3545;
-	/* Màu đỏ */
 	color: white;
+}
+.modal-buttons .btn-confirm:hover {
+	background-color: #1a9c39;
+}
+
+.modal-buttons .btn-cancel:hover {
+	background-color: #ce2132;
 }
 
 td, th {

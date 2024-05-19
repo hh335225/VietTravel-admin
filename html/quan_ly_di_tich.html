@@ -155,9 +155,11 @@
     </div>
 
 	<div id="editModal" style="display: none;">
-		<p>Sửa di tích</p>
 		<form id="editForm">
-			
+
+			<label for=""></label>
+			<div class="title">Sửa di tích</div>
+
 			<label for="editName">Tên di tích:</label>
 			<input type="text" id="editName" name="name">
 			
@@ -180,15 +182,17 @@
 			<input type="number" id="editY" name="y" step="any">
 			
 			<div class="form-buttons modal-buttons">
-				<button type="submit" class="btn-submit">Lưu</button>
-				<button type="button" id="cancelEdit">Hủy</button>
+				<button type="submit" class="btn-submit btn-confirm">Lưu</button>
+				<button type="button" id="cancelEdit" class="btn-cancel">Hủy</button>
 			</div>
 		</form>
 	</div>
 
 	<div id="addModal" style="display: none;">
-		<h3>Thêm di tích</h3>
 		<form id="addForm">
+			<label for=""></label>
+			<div class="title">Thêm di tích</div>
+
 			<label for="name">Tên di tích:</label>
 			<input type="text" id="name" name="name">
 			
@@ -208,8 +212,8 @@
 			<input type="number" id="location-y" name="y" step="any">
 			
 			<div class="form-buttons modal-buttons">
-				<button type="submit" class="btn-submit">Lưu</button>
-				<button type="button" id="cancelAdd">Hủy</button>
+				<button type="submit" class="btn-submit btn-confirm">Lưu</button>
+				<button type="button" id="cancelAdd" class="btn-cancel">Hủy</button>
 			</div>
 		</form>
 	</div>
